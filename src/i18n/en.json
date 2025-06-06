@@ -1,0 +1,161 @@
+{
+  "Accept": "Accept",
+  "Add cash amount (optional)": "Add cash amount (optional)",
+  "Add Item": "Add Item",
+  "Add your first item and start trading today!": "Add your first item and start trading today!",
+  "Already have an account?": "Already have an account?",
+  "Categories": "Categories",
+  "Category": "Category",
+  "Chats": "Chats",
+  "Code": "Code",
+  "Color": "Color",
+  "Complete a trade to get your first review!": "Complete a trade to get your first review!",
+  "Condition": "Condition",
+  "Confirm": "Confirm",
+  "Confirm your password": "Confirm your password",
+  "Create one": "Create one",
+  "Delete Item": "Delete Item",
+  "Deny": "Deny",
+  "Description": "Description",
+  "Edit Item": "Edit Item",
+  "Edit Profile": "Edit Profile",
+  "E-mail": "E-mail",
+  "English": "English",
+  "Enter the amount": "Enter the amount",
+  "Enter your address": "Enter your address",
+  "Enter your comment": "Enter your comment",
+  "Enter your password": "Enter your password",
+  "Forgot your password?": "Forgot your password?",
+  "Full Name": "Full Name",
+  "Hey! I like your": "Hey! I like your",
+  "I agree to the": "I agree to the",
+  "Kg": "Kg",
+  "Km": "Km",
+  "Language": "Language",
+  "Log In": "Log In",
+  "Look At Thing": "Look At Thing",
+  "Make a Review": "Make a Review",
+  "Material": "Material",
+  "Max Price": "Max Price",
+  "Max Weight": "Max Weight",
+  "My Items": "My Items",
+  "New Message": "New Message",
+  "New Offer": "New Offer",
+  "New to Trueque?": "New to Trueque?",
+  "No matches, no messages—yet! Swipe more to find great exchanges.": "No matches, no messages—yet! Swipe more to find great exchanges.",
+  "No reviews yet—be the first to trade!": "No reviews yet—be the first to trade!",
+  "number": "number",
+  "Offer Sent": "Offer Sent",
+  "Password": "Password",
+  "Price": "Price",
+  "Range": "Range",
+  "Register": "Register",
+  "Reset password": "Reset password",
+  "Reset Your Password": "Reset Your Password",
+  "Save Changes": "Save Changes",
+  "Search": "Search",
+  "Search...": "Search...",
+  "Send": "Send",
+  "Send Offer": "Send Offer",
+  "Sign In": "Sign In",
+  "Sign Up": "Sign Up",
+  "Spanish": "Spanish",
+  "Stars": "Stars",
+  "Submit": "Submit",
+  "Swaps": "Swaps",
+  "Terms of Service and Privacy Policy": "Terms of Service and Privacy Policy",
+  "Thing Name": "Thing Name",
+  "Things": "Things",
+  "Type your message...": "Type your message...",
+  "Verification Code": "Verification Code",
+  "Verify": "Verify",
+  "Verify your Email": "Verify your Email",
+  "Weight": "Weight",
+  "Welcome to Trueque": "Welcome to Trueque",
+  "matchMessages": {
+    "0": {
+      "title": "🎉 Match Found!",
+      "message": "You've found a swap partner! Ready to exchange your items? Let's make this happen!"
+    },
+    "1": {
+      "title": "🤝 It’s a Match!",
+      "message": "Great news! You both want to swap. Tap below to chat and finalize the exchange!"
+    },
+    "2": {
+      "title": "🥳 Swap Time!",
+      "message": "You matched! Let’s get this swap rolling—hit the button to connect!"
+    },
+    "3": {
+      "title": "🚀 Match Alert!",
+      "message": "You’ve got a match! Don’t miss out—click below to start your swap journey!"
+    },
+    "4": {
+      "title": "🎊 It’s a Match!",
+      "message": "You and your match are ready to swap! Message them to arrange the details!"
+    },
+    "5": {
+      "title": "💥 Exciting Match!",
+      "message": "You found someone to swap with! Let’s make this exchange happen!"
+    },
+    "6": {
+      "title": "✨ Match Made!",
+      "message": "Congratulations! You’ve found a great swap partner. Time to chat!"
+    },
+    "7": {
+      "title": "🎈 You Matched!",
+      "message": "Awesome! You matched with someone interested in swapping. Connect now!"
+    },
+    "8": {
+      "title": "🌟 Swap Partner Found!",
+      "message": "You’ve found a swap partner! Ready to chat and arrange the exchange?"
+    },
+    "9": {
+      "title": "🎶 It’s a Perfect Match!",
+      "message": "What a coincidence! You both want to swap. Let’s get started!"
+    },
+    "10": {
+      "title": "🔔 Match Notification!",
+      "message": "You matched with someone looking to swap. Don’t wait—message them now!"
+    },
+    "11": {
+      "title": "🏆 Match Success!",
+      "message": "Great job! You have a match. Time to coordinate your swap!"
+    },
+    "12": {
+      "title": "💖 It’s a Great Match!",
+      "message": "You’ve matched with a fellow swapper! Let’s talk details!"
+    },
+    "13": {
+      "title": "💫 You Matched Up!",
+      "message": "Fantastic! You found a swap partner. Click below to start chatting!"
+    },
+    "14": {
+      "title": "🔥 Hot Match!",
+      "message": "You’ve got a match! Time to connect and finalize your swap!"
+    },
+    "15": {
+      "title": "📦 Swap Partner Alert!",
+      "message": "You matched with someone ready to swap. Reach out to them now!"
+    },
+    "16": {
+      "title": "🚦 Match Confirmed!",
+      "message": "You’ve found a swap partner! Ready to exchange details?"
+    },
+    "17": {
+      "title": "💡 Match Found!",
+      "message": "Great news! You have a match. Start chatting to arrange the swap!"
+    },
+    "18": {
+      "title": "🍀 Lucky Match!",
+      "message": "You matched with someone who wants to swap. Don’t miss your chance!"
+    },
+    "19": {
+      "title": "🔗 Connection Established!",
+      "message": "You’ve got a match! Let’s connect and make that swap happen!"
+    },
+    "20": {
+      "title": "🥇 It’s a Winner!",
+      "message": "You found a swap partner! Ready to start your exchange journey?"
+    }
+  }
+}

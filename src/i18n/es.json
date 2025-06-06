@@ -1,0 +1,162 @@
+{
+  "Accept": "Aceptar",
+  "Add cash amount (optional)": "Agregar monto en efectivo (opcional)",
+  "Add Item": "Agregar artículo",
+  "Add your first item and start trading today!": "¡Agrega tu primer artículo y comienza a intercambiar hoy!",
+  "Already have an account?": "¿Ya tienes una cuenta?",
+  "Categories": "Categorías",
+  "Category": "Categoría",
+  "Chats": "Chats",
+  "Code": "Código",
+  "Color": "Color",
+  "Complete a trade to get your first review!": "¡Completa un intercambio para obtener tu primera reseña!",
+  "Condition": "Condición",
+  "Confirm": "Confirmar",
+  "Confirm your password": "Confirma tu contraseña",
+  "Create one": "Crear una",
+  "Delete Item": "Eliminar artículo",
+  "Deny": "Denegar",
+  "Description": "Descripción",
+  "Edit Item": "Editar artículo",
+  "Edit Profile": "Editar perfil",
+  "E-mail": "Correo electrónico",
+  "English": "Inglés",
+  "Enter the amount": "Ingresa el monto",
+  "Enter your address": "Ingresa tu dirección",
+  "Enter your comment": "Ingresa tu comentario",
+  "Enter your password": "Ingresa tu contraseña",
+  "Forgot your password?": "¿Olvidaste tu contraseña?",
+  "Full Name": "Nombre completo",
+  "Hey! I like your": "¡Hey! Me gusta tu",
+  "I agree to the": "Acepto los",
+  "Kg": "Kg",
+  "Km": "Km",
+  "Language": "Idioma",
+  "Log In": "Iniciar sesión",
+  "Look At Thing": "Ver artículo",
+  "Make a Review": "Hacer una reseña",
+  "Material": "Material",
+  "Max Price": "Precio máximo",
+  "Max Weight": "Peso máximo",
+  "My Items": "Mis artículos",
+  "New Message": "Nuevo mensaje",
+  "New Offer": "Nueva oferta",
+  "New to Trueque?": "¿Nuevo en Trueque?",
+  "No matches, no messages—yet! Swipe more to find great exchanges.": "Sin coincidencias ni mensajes... ¡todavía! Desliza más para encontrar buenos intercambios.",
+  "No reviews yet—be the first to trade!": "Aún no hay reseñas—¡sé el primero en intercambiar!",
+  "number": "número",
+  "Offer Sent": "Oferta enviada",
+  "Password": "Contraseña",
+  "Price": "Precio",
+  "Range": "Rango",
+  "Register": "Registrarse",
+  "Reset password": "Restablecer contraseña",
+  "Reset Your Password": "Restablece tu contraseña",
+  "Save Changes": "Guardar cambios",
+  "Search": "Buscar",
+  "Search...": "Buscar...",
+  "Send": "Enviar",
+  "Send Offer": "Enviar oferta",
+  "Sign In": "Iniciar sesión",
+  "Sign Up": "Registrarse",
+  "Spanish": "Español",
+  "Stars": "Estrellas",
+  "Submit": "Enviar",
+  "Swaps": "Intercambios",
+  "Terms of Service and Privacy Policy": "Términos de servicio y política de privacidad",
+  "Thing Name": "Nombre del artículo",
+  "Things": "Artículos",
+  "Rejected": "Denegado",
+  "Type your message...": "Escribe tu mensaje...",
+  "Verification Code": "Código de verificación",
+  "Verify": "Verificar",
+  "Verify your Email": "Verifica tu correo electrónico",
+  "Weight": "Peso",
+  "Welcome to Trueque": "Bienvenido a Trueque",
+  "matchMessages": {
+    "0": {
+      "title": "🎉 ¡Intercambio Encontrado!",
+      "message": "¡Has encontrado un compañero de intercambio! ¿Listo para intercambiar tus artículos? ¡Hagámoslo realidad!"
+    },
+    "1": {
+      "title": "🤝 ¡Es un Intercambio!",
+      "message": "¡Buenas noticias! Ambos quieren intercambiar. ¡Pulsa abajo para chatear y finalizar el intercambio!"
+    },
+    "2": {
+      "title": "🥳 ¡Hora de Intercambiar!",
+      "message": "¡Hiciste un match! Vamos a hacer este intercambio—¡presiona el botón para conectar!"
+    },
+    "3": {
+      "title": "🚀 ¡Alerta de Intercambio!",
+      "message": "¡Tienes un match! No te lo pierdas—¡haz clic abajo para empezar tu viaje de intercambio!"
+    },
+    "4": {
+      "title": "🎊 ¡Es un Intercambio!",
+      "message": "¡Tú y tu compañero están listos para intercambiar! ¡Mándales un mensaje para organizar los detalles!"
+    },
+    "5": {
+      "title": "💥 ¡Intercambio Emocionante!",
+      "message": "¡Encontraste a alguien con quien intercambiar! ¡Hagamos que este intercambio suceda!"
+    },
+    "6": {
+      "title": "✨ ¡Intercambio Realizado!",
+      "message": "¡Felicidades! Has encontrado un gran compañero de intercambio. ¡Es hora de charlar!"
+    },
+    "7": {
+      "title": "🎈 ¡Has Hacido un Match!",
+      "message": "¡Genial! Hiciste match con alguien interesado en intercambiar. ¡Conéctate ahora!"
+    },
+    "8": {
+      "title": "🌟 ¡Compañero de Intercambio Encontrado!",
+      "message": "¡Has encontrado un compañero de intercambio! ¿Listo para charlar y organizar el intercambio?"
+    },
+    "9": {
+      "title": "🎶 ¡Es un Match Perfecto!",
+      "message": "¡Qué coincidencia! Ambos quieren intercambiar. ¡Vamos a empezar!"
+    },
+    "10": {
+      "title": "🔔 ¡Notificación de Match!",
+      "message": "Tienes un match con alguien que busca intercambiar. ¡No esperes más—envíales un mensaje ahora!"
+    },
+    "11": {
+      "title": "🏆 ¡Match Exitoso!",
+      "message": "¡Buen trabajo! Tienes un match. ¡Es hora de coordinar tu intercambio!"
+    },
+    "12": {
+      "title": "💖 ¡Es un Gran Match!",
+      "message": "¡Has hecho match con otro intercambiador! ¡Hablemos de los detalles!"
+    },
+    "13": {
+      "title": "💫 ¡Has Hacido un Match!",
+      "message": "¡Fantástico! Encontraste un compañero de intercambio. ¡Haz clic abajo para comenzar a charlar!"
+    },
+    "14": {
+      "title": "🔥 ¡Match Caliente!",
+      "message": "¡Tienes un match! Es hora de conectar y finalizar tu intercambio."
+    },
+    "15": {
+      "title": "📦 ¡Alerta de Compañero de Intercambio!",
+      "message": "Tienes un match con alguien listo para intercambiar. ¡Contáctalos ahora!"
+    },
+    "16": {
+      "title": "🚦 ¡Match Confirmado!",
+      "message": "¡Has encontrado un compañero de intercambio! ¿Listo para intercambiar detalles?"
+    },
+    "17": {
+      "title": "💡 ¡Match Encontrado!",
+      "message": "¡Buenas noticias! Tienes un match. Comienza a charlar para organizar el intercambio."
+    },
+    "18": {
+      "title": "🍀 ¡Match de Suerte!",
+      "message": "Hiciste match con alguien que quiere intercambiar. ¡No pierdas la oportunidad!"
+    },
+    "19": {
+      "title": "🔗 ¡Conexión Establecida!",
+      "message": "¡Tienes un match! Vamos a conectar y hacer que ese intercambio suceda."
+    },
+    "20": {
+      "title": "🥇 ¡Es un Ganador!",
+      "message": "¡Encontraste un compañero de intercambio! ¿Listo para comenzar tu viaje de intercambio?"
+    }
+  }
+}
