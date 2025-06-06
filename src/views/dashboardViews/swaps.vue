@@ -4,7 +4,7 @@
         <successErrorCard :type="typeSuccessErrorCard" :text="textSuccessErrorCard" :launch="showSuccessErrorCard"></successErrorCard>
         <searchElement @searchThingsEmit="searchThings" @showFiltersEmit="showFiltersEmit()"></searchElement>
         <h2 class="noSwaps" v-if="showThingsAfterSearch && isThingsEmpty">{{ $t("Looks like you've seen everything! Try searching for something new or expanding your range to discover more.") }}</h2>
-        <swipeCard v-if="showThingsAfterSearch" :things="thingsForSwipe" @swipeRight="onSwipeRight" @swipeLeft="onSwipeLeft"  @allSwiped="onAllSwiped"/>
+        <swipeCard v-if="showThingsAfterSearch"   @adViewed="trackAdView" :things="thingsForSwipe" @swipeRight="onSwipeRight" @swipeLeft="onSwipeLeft"  @allSwiped="onAllSwiped"/>
     </div>
 </template>
 
@@ -29,6 +29,10 @@
         loadSwipes();
     })
 
+    const trackAdView = (data) => {
+        console.log('Ad viewed:', data.direction, 'at', new Date(data.timestamp));
+        // Send analytics to your tracking system
+    };
 
     import successErrorCard from "../components/successErrorCard.vue";
     const typeSuccessErrorCard = ref('');

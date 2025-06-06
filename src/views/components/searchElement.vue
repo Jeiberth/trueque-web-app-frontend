@@ -17,20 +17,38 @@
     <div v-if="showFilters" class="filter-options-container">
       <div class="filter-card">
         <span>{{ $t('$') }}</span>
-        <input
+        <!-- <input
           type="number"
           v-model="filters.price"
           :placeholder="$t('Max Price')"
           class="filter-input"
+        /> -->
+        <input
+          type="text"
+          inputmode="decimal"
+          pattern="[0-9]*"
+          v-model="filters.price"
+          :placeholder="$t('Max Price')"
+          class="filter-input"
+          @input="filters.price = filters.price.replace(/[^0-9]/g, '')"
         />
       </div>
 
       <div class="filter-card">
-        <input
+        <!-- <input
           type="number"
           v-model="filters.range"
           :placeholder="$t('Range')"
           class="filter-input"
+        /> -->
+         <input
+          type="text"
+          inputmode="decimal"
+          pattern="[0-9]*"
+          v-model="filters.rang"
+          :placeholder="$t('Range')"
+          class="filter-input"
+          @input="filters.rang = filters.rang.replace(/[^0-9]/g, '')"
         />
         <span>{{ $t('Km') }}</span>
       </div>
@@ -47,11 +65,20 @@
       </select>
 
       <div class="filter-card">
-        <input
+        <!-- <input
           type="number"
           v-model="filters.weight"
           :placeholder="$t('Max Weight')"
           class="filter-input"
+        /> -->
+        <input
+          type="text"
+          inputmode="decimal"
+          pattern="[0-9]*"
+          v-model="filters.weight"
+          :placeholder="$t('Max Weight')"
+          class="filter-input"
+          @input="filters.weight = filters.weight.replace(/[^0-9]/g, '')"
         />
         <span>{{ $t('Kg') }}</span>
       </div>

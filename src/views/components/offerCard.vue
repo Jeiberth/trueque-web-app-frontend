@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="user-info">
             <p class="offer">{{ offerSend ? $t("Offer Sent") : $t("Offer Received") }}</p>
-            <p class="stats">{{ status == "" }}</p>
+            <p class="stats">{{ status }}</p>
             <p class="stats">{{ formatDate(created_at) }}</p>
             </div>
         </div>

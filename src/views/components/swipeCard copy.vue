@@ -26,10 +26,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, onBeforeMount, computed, nextTick } from 'vue';
+import { ref, onMounted, watch, onBeforeMount, computed, nextTick, onBeforeUnmount } from 'vue';
 import Hammer from 'hammerjs';
 import feather from "feather-icons";
-import fallbackImage from '@/assets/fallback.jpg'
+import fallbackImage from '@/assets/fallback_swipe.jpg'
 
 function onImgError(event) {
   event.target.src = fallbackImage
@@ -78,16 +78,37 @@ const cardStyle = computed(() => (index) => {
   }
 });
 
+// const resetCardStyle = (el) => {
+//   if (el) {
+//     el.classList.remove('moving');
+//     el.style.transform = '';
+//     el.style.opacity = '';
+//     el.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease-out';
+//   }
+//   swipeDirection.value = null;
+//   isAnimating.value = false;
+// };
+
 const resetCardStyle = (el) => {
   if (el) {
     el.classList.remove('moving');
     el.style.transform = '';
     el.style.opacity = '';
     el.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease-out';
+
+    // Reset overlay opacities
+    const leftOverlay = el.querySelector('.swipe-left');
+    const rightOverlay = el.querySelector('.swipe-right');
+    if (leftOverlay) leftOverlay.style.opacity = 0;
+    if (rightOverlay) rightOverlay.style.opacity = 0;
+
+    // Re-render icons to ensure feather icons don't disappear
+    feather.replace();
   }
   swipeDirection.value = null;
   isAnimating.value = false;
 };
+
 
 const handlePan = (event, el) => {
   if (isAnimating.value || displayedThings.value.length === 0) return;
@@ -175,12 +196,108 @@ const initSwipe = () => {
   }
 };
 
+// Keyboard swipe functionality
+// const handleKeyboardSwipe = (isRight) => {
+//   if (isAnimating.value || displayedThings.value.length === 0) return;
+
+//   const swipedCardId = displayedThings.value[0]?.id;
+//   if (!swipedCardId) return;
+
+//   swipeDirection.value = isRight ? 1 : -1;
+//   isAnimating.value = true;
+
+//   setTimeout(() => {
+//     const swipedThing = allThings.value.find(thing => thing.id === swipedCardId);
+
+//     allThings.value = allThings.value.map(thing =>
+//       thing.id === swipedCardId ? { ...thing, swiped: true } : thing
+//     );
+
+//     if (swipedThing) {
+//       emit(isRight ? "swipeRight" : "swipeLeft", swipedThing);
+//     }
+
+//     currentIndex.value++;
+//     updateDisplayedThings();
+
+//     // Reset animation state
+//     swipeDirection.value = null;
+//     isAnimating.value = false;
+//   }, 400);
+// };
+
+
+
+const handleKeyboardSwipe = (isRight) => {
+  if (isAnimating.value || displayedThings.value.length === 0) return;
+
+  const cardElement = document.querySelector(".tinder--card");
+  const swipedCardId = displayedThings.value[0]?.id;
+  if (!cardElement || !swipedCardId) return;
+
+  const direction = isRight ? 1 : -1;
+  swipeDirection.value = direction;
+  isAnimating.value = true;
+
+  // Show overlay
+  const leftOverlay = cardElement.querySelector(".swipe-left");
+  const rightOverlay = cardElement.querySelector(".swipe-right");
+
+  if (leftOverlay) leftOverlay.style.opacity = direction === -1 ? 1 : 0;
+  if (rightOverlay) rightOverlay.style.opacity = direction === 1 ? 1 : 0;
+
+  // Re-render feather icons
+  feather.replace();
+
+  // Apply transform and transition
+  cardElement.style.transition = 'transform 0.4s ease-out, opacity 0.4s ease-out';
+  cardElement.style.transform = `translateX(${direction * 100}%) rotate(${direction * 30}deg)`;
+  cardElement.style.opacity = 0;
+
+  setTimeout(() => {
+    const swipedThing = allThings.value.find(thing => thing.id === swipedCardId);
+
+    allThings.value = allThings.value.map(thing =>
+      thing.id === swipedCardId ? { ...thing, swiped: true } : thing
+    );
+
+    if (swipedThing) {
+      emit(isRight ? "swipeRight" : "swipeLeft", swipedThing);
+    }
+
+    currentIndex.value++;
+    updateDisplayedThings();
+    nextTick(() => resetCardStyle(cardElement));
+  }, 400);
+};
+
+
+
+
+
+const handleKeyDown = (event) => {
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    handleKeyboardSwipe(false); // Swipe left
+  } else if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    handleKeyboardSwipe(true); // Swipe right
+  }
+};
+
 onMounted(() => {
   allThings.value = props.things.value.map(thing => ({ ...thing, swiped: false }));
   updateDisplayedThings();
   nextTick(initSwipe);
+
+  // Add keyboard event listener
+  window.addEventListener('keydown', handleKeyDown);
 });
 
+onBeforeUnmount(() => {
+  // Clean up keyboard event listener
+  window.removeEventListener('keydown', handleKeyDown);
+});
 
 watch(displayedThings, () => {
   nextTick(initSwipe);

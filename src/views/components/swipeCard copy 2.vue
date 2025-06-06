@@ -7,7 +7,6 @@
         class="tinder--card"
         :class="{ 'ad-card': card.isAd }"
         :style="cardStyle(index)"
-        style="height: 100% !important"
       >
         <div class="swipe-overlay swipe-left"><i data-feather="thumbs-down" class="like"></i></div>
         <div class="swipe-overlay swipe-right"><i data-feather="thumbs-up" class="like"></i></div>
@@ -30,11 +29,10 @@
           <div class="ad-indicator">
             <span class="ad-label">Sponsored</span>
           </div>
-          <div class="ad-content" style="height: 100% !important;">
+          <div class="ad-content">
             <div 
               :id="`adsense-${card.id}`"
               class="adsense-container"
-              style="height: 100% !important;"
               v-html="card.adHtml"
             ></div>
           </div>
@@ -142,7 +140,7 @@ const loadAdSenseScript = () => {
 const generateAdSenseHTML = (adId) => {
   return `
     <ins class="adsbygoogle"
-          style="display:block; width: 100%; min-width: 250px; height: 100%;"
+          style="display:block; width: 100%; height: 100%;"
           data-ad-client="ca-pub-2219376995096244"
           data-ad-slot="7745126010"
           data-ad-format="auto"
@@ -460,7 +458,7 @@ watch(() => props.things, async (newThings) => {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100% !important;
+  height: 100%;
   overflow: hidden;
   border-radius: var(--border-radius, 24px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.219);
@@ -493,7 +491,7 @@ watch(() => props.things, async (newThings) => {
 
 .ad-content {
   width: 100%;
-  height: 100% !important;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -505,7 +503,6 @@ watch(() => props.things, async (newThings) => {
 .adsense-container {
   width: 100%;
   min-height: 280px;
-  height: 100% !important;
   min-width: 300px;
   display: flex;
   align-items: center;

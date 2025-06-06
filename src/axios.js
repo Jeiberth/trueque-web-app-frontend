@@ -40,44 +40,50 @@ axiosInstance.interceptors.response.use((response) => {
 export default axiosInstance;
 
 
+/*
+
+  <meta name="robots" content="noindex,nofollow">
 
 
-//   <meta name="robots" content="noindex,nofollow">
+in-feed add
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="+5y+s5-1j-50+eq"
+     data-ad-client="ca-pub-2219376995096244"
+     data-ad-slot="6240019370"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+-----------------------
+display add
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
+     crossorigin="anonymous"></script>
+<!-- vertial-display-ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2219376995096244"
+     data-ad-slot="7745126010"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 
-// in-feed add
-
-// <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
-//      crossorigin="anonymous"></script>
-// <ins class="adsbygoogle"
-//      style="display:block"
-//      data-ad-format="fluid"
-//      data-ad-layout-key="+5y+s5-1j-50+eq"
-//      data-ad-client="ca-pub-2219376995096244"
-//      data-ad-slot="6240019370"></ins>
-// <script>
-//      (adsbygoogle = window.adsbygoogle || []).push({});
-// </script>
-
-// -----------------------
-// display add
-
-// <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
-//      crossorigin="anonymous"></script>
-// <!-- vertial-display-ad -->
-// <ins class="adsbygoogle"
-//      style="display:block"
-//      data-ad-client="ca-pub-2219376995096244"
-//      data-ad-slot="7745126010"
-//      data-ad-format="auto"
-//      data-full-width-responsive="true"></ins>
-// <script>
-//      (adsbygoogle = window.adsbygoogle || []).push({});
-// </script>
+script
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
+     crossorigin="anonymous"></script>
 
 
-// script
-//     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
-//      crossorigin="anonymous"></script>
 
 
+
+
+
+*/
