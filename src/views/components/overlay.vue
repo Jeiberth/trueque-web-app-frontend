@@ -1,27 +1,48 @@
 <template>
-    <div>
-        <div>
-            <div class="wait"></div>
-            <!-- <div class="spinner"><i data-feather="shuffle" class="shuffle"></i></div> -->
-            <div class="spinner"><i class="fa-solid fa-shuffle shuffle"></i></div>
-        </div>
+  <div :class="['wait', { loaded: isReady }]">
+  <!-- <div class="wait"> -->
+    <div class="spinner">
+      <i class="fa-solid fa-shuffle shuffle"></i>
     </div>
+  </div>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-import feather from "feather-icons";
 
-onMounted(() => {
-  feather.replace();
-});
+  import { ref, onMounted, nextTick } from 'vue';
+
+  const isReady = ref(false);
+
+  // Set viewport height CSS variable
+  const setViewportHeight = () => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  };
+
+  onMounted(async () => {
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+
+    await nextTick();
+
+    if (document.fonts?.ready) {
+      await document.fonts.ready;
+    }
+
+    isReady.value = true;
+  });
+
 </script>
 
 <style>
-body,
-html {
-  overflow: hidden; /* Prevents scrolling */
-}
+
+  /* Global styles — should be in your base CSS or app setup */
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+  
 </style>
 
 <style scoped>
@@ -30,42 +51,57 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  /* background-color: rgb(106, 197, 88, 0.4);  */
-  background-color: rgba(0, 0, 0, 0.4); /* Green background */
-  backdrop-filter: blur(4px); /* Applies blur to the background */
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   z-index: 3000000;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px; /* Enables 3D for children */
+}
+
+.wait.loaded {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .spinner {
-  position: fixed; /* Center the spinner */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centering adjustment */
   width: 50px;
   height: 50px;
-  background-color: white; /* Black spinner */
+  background-color: white;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
   z-index: 3300000;
-}
 
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotateY(0deg) scale(0.1);
-    opacity: 1;
-  }
-  to {
-    transform: translate(-50%, -50%) rotateY(360deg) scale(1.5);
-    opacity: 0;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: spin3D 0.8s linear infinite;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .shuffle {
-  margin-top: 13px;
-  margin-left: 13px;
-  z-index: 33;
   font-size: 24px;
   color: black;
+  pointer-events: none;
+}
+
+@keyframes spin3D {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 </style>

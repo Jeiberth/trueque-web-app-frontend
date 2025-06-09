@@ -450,7 +450,7 @@ watch(() => props.things, async (newThings) => {
   position: relative;
   width: 90vw;
   max-width: 400px;
-  height: calc(92vh - 110px);
+  height: calc(calc(var(--vh, 1vh) * 92) - 110px);
 }
 
 .tinder--card {

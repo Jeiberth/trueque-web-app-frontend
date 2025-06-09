@@ -1,6 +1,5 @@
 <template>
     <div>
-        <overlay v-if="loading"></overlay>
         <h1 class="tittle">{{  $t("Chats")  }}</h1>
         <div class="line"></div>
         <h2 class="noChats" v-if="usersWithMatch.length == 0">{{ $t("No matches, no messages—yet! Swipe more to find great exchanges.") }}</h2>
@@ -34,7 +33,6 @@
 
     const router = useRouter()
     const swapResource = new swapApiResource();
-    const loading = ref(false);
 
     onBeforeUnmount(() => {
         store.commit("setLoading", true);
@@ -115,7 +113,8 @@
         display: flex;
         flex-direction: column;
         padding: 0px;
-        height: calc(100vh - 100px - 85px);
+        height: calc(calc(var(--vh, 1vh) * 100) - 100px - 85px)
+;
         overflow-y: auto;
         mask-image: linear-gradient(
             to bottom,

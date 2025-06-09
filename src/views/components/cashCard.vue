@@ -1,7 +1,7 @@
 <template>
     <div class="rating-card">
       <div class="card-header">
-        <h5 class="labelRate">{{type}}:</h5>$
+        <h5 class="labelRate">{{ $t(type) }}:</h5>$
         <input
           v-model="cash"
           class="comment-input"

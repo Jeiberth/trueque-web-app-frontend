@@ -62,7 +62,7 @@
               :key="cond.id"
               :value="cond.id"
             >
-              {{ cond.name }}
+              {{ $t(cond.name) }}
             </option>
           </select>
         </div>
@@ -87,7 +87,7 @@
               :key="colorOption.id"
               :value="colorOption.id"
             >
-              {{ colorOption.name }}
+              {{ $t(colorOption.name) }}
             </option>
           </select>
           <select
@@ -102,7 +102,7 @@
               :key="materialOption.id"
               :value="materialOption.id"
             >
-              {{ materialOption.name }}
+              {{ $t(materialOption.name) }}
             </option>
           </select>
         </div>
@@ -119,7 +119,7 @@
               :key="cat.id"
               :value="cat.id"
             >
-              {{ cat.name }}
+              {{ $t(cat.name) }}
             </option>
           </select>
         </div>

@@ -5,7 +5,7 @@ import store from '/src/store'  // Make sure to import the Vuex store
 import router from '/src/router';  // Vue Router
 
 const axiosInstance = axios.create({
-  baseURL: 'https://5838-70-50-249-144.ngrok-free.app/api/',  // Example base URL
+  baseURL: 'https://b7b0-70-50-249-144.ngrok-free.app/api/',  // Example base URL
   headers: {
     'Content-Type': 'application/json',
     "ngrok-skip-browser-warning": true,

@@ -21,7 +21,7 @@
             <h5 class="thing-name">{{ name }}</h5>
             <div class="thing-attributes">
                 <span class="badge badge-price">~${{ price }}</span>
-                <span class="badge badge-condition">{{ condition }}</span>
+                <span class="badge badge-condition">{{ $t(condition)  }}</span>
             </div>
             <p class="thing-description">{{ description }}</p>
         </div>

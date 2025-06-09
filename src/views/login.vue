@@ -58,7 +58,6 @@
       </p>
     </form>
 
-    <overlay v-if="loading"></overlay>
     <successErrorCard
       :type="type"
       :text="text"
@@ -86,7 +85,6 @@ const type = ref("error");
 const text = ref("The provided credentials are incorrect");
 const showSuccessErrorCard = ref(false);
 
-const loading = ref(false);
 const email = ref('');
 const password = ref('');
 const agreedToTerms = ref(false);
@@ -125,7 +123,7 @@ const handleSubmit = () => {
         router.push({ name: 'swaps' });
       } else if('verify' in response) {
         type.value = "info";
-        text.value = response.message;
+        text.value = t(response.message);
         showSuccessErrorCard.value = true;
         setTimeout(() => {
           showSuccessErrorCard.value = false;
@@ -156,7 +154,7 @@ const handleSubmit = () => {
 
 .landing-page {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;

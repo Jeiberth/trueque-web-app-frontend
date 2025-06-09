@@ -2,10 +2,10 @@
   <div>
     <div class="tabs-container">
       <div class="tab" :class="{ active: selectedTab === 'firstTap' }" @click="selectTab('firstTap')">
-        {{tab1}}
+        {{ $t(tab1) }}
       </div>
       <div class="tab" :class="{ active: selectedTab === 'secondTap' }" @click="selectTab('secondTap')">
-        {{tab2}}
+        {{ $t(tab2) }}
       </div>
     </div>
 
@@ -109,7 +109,8 @@
     }
 
     /* .tab-content-container{
-        height: calc(100vh - 300px - 85px);
+        height: calc(calc(var(--vh, 1vh) * 100) - 300px - 85px)
+;
         overflow-y: auto;
     } */
 
@@ -117,7 +118,8 @@
         display: flex;
         flex-direction: column;
         padding: 0px;
-        /* height: calc(100vh - 300px - 85px); */
+        /* height: calc(calc(var(--vh, 1vh) * 100) - 300px - 85px)
+; */
         overflow-y: auto;
         mask-image: linear-gradient(
             to bottom,
@@ -138,15 +140,15 @@
 
 
     .tab-content-container.chat-user-route {
-        height: calc(100vh - 260px - 85px);
+        height: calc(calc(var(--vh, 1vh) * 100) - 260px - 85px);
     }
 
     .tab-content-container.profile-route {
-        height: calc(100vh - 300px - 85px);
+        height: calc(calc(var(--vh, 1vh) * 100) - 300px - 85px);
     }
 
     .tab-content-container.offer-route {
-        height: calc(100vh - 260px - 85px);
+        height: calc(calc(var(--vh, 1vh) * 100) - 260px - 85px);
     }
 
     .tab-content-container::-webkit-scrollbar {

@@ -90,7 +90,6 @@
         </p>
       </form>
     </div>
-    <overlay v-if="loading"></overlay>
     <successErrorCard
       :type="type"
       :text="text"
@@ -118,8 +117,6 @@ const type = ref("success");
 const text = ref("");
 const showSuccessErrorCard = ref(false);
 const userIdAuth = store.getters.getUserId;
-
-const loading = ref(false);
 
 const name = ref('');
 const city = ref('');

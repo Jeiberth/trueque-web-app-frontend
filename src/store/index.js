@@ -286,7 +286,6 @@ const store = createStore({
       commit('setUserId', userId);
     },
     initEcho({ state, commit, dispatch }) {
-        console.log("hola")
         const echo = initEcho(state.token);
 
         echo.private(`user.${state.userId}`)

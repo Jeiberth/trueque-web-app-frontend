@@ -60,7 +60,8 @@
           :key="condition.id"
           :value="condition.id"
         >
-          {{ condition.name }}
+          <!-- {{ condition.name }} -->
+          {{ $t(condition.name) }}
         </option>
       </select>
 
@@ -86,21 +87,21 @@
       <select v-model="filters.category" class="filter-card select-filter">
         <option value="" disabled selected>{{ $t('Category') }}</option>
         <option v-for="category in categories" :key="category.id" :value="category.id">
-          {{ category.name }}
+          {{ $t(category.name) }}
         </option>
       </select>
 
       <select v-model="filters.material" class="filter-card select-filter">
         <option value="" disabled selected>{{ $t('Material') }}</option>
         <option v-for="material in materials" :key="material.id" :value="material.id">
-          {{ material.name }}
+          {{ $t(material.name) }}
         </option>
       </select>
 
       <select v-model="filters.color" class="filter-card select-filter">
         <option value="" disabled selected>{{ $t('Color') }}</option>
         <option v-for="color in colors" :key="color.id" :value="color.id">
-          {{ color.name }}
+          {{ $t(color.name) }}
         </option>
       </select>
     </div>
@@ -265,7 +266,7 @@ setup(props, { emit }) {
   overflow-x: auto;
   padding-top: 10px;
   gap: 10px;
-  /* height: 50vh; */
+  /* height: calc(var(--vh, 1vh) * 50); */
   justify-content: flex-start;
 }
 

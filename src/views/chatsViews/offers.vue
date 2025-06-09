@@ -1,6 +1,5 @@
 <template>
     <div>
-        <overlay v-if="loading"></overlay>
         <div class="cont-offer">
             <cardForClick text="Make an Offer" icon="plus-circle" @clicked="makeAnOffer"></cardForClick>
             <offerCard @openOffer="openOffer(offer.id, offer.offer)"
@@ -32,7 +31,6 @@
     const route = useRoute();
     const router = useRouter();
 
-    const loading = ref(false);
     const userId = route.query.userId;
     const chatId = route.query.chatId;
     const swapResource = new swapApiResource();
@@ -96,7 +94,7 @@
         display: flex;
         flex-direction: column;
         padding: 0px;
-        height: calc(100vh - 115px - 85px);
+        height: calc(calc(var(--vh, 1vh) * 100) - 115px - 85px);
         overflow-y: auto;
         mask-image: linear-gradient(
             to bottom,

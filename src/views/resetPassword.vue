@@ -42,7 +42,6 @@
         </button>
       </form>
     </div>
-    <overlay v-if="loading"></overlay>
     <successErrorCard
       :type="type"
       :text="text"
@@ -70,7 +69,6 @@ const type = ref("error");
 const text = ref("Check all the inputs");
 const showSuccessErrorCard = ref(false);
 
-const loading = ref(false);
 const verCode = ref('');
 const password = ref('');
 const passwordConfirm = ref('');
@@ -86,7 +84,7 @@ const handleSubmit = () => {
     return;
   }
 
-  loading.value = true;
+  store.commit("setLoading", true);
 
   swapResource
     .verifyAndChanegPassword({ verCode: verCode.value, password: password.value })
@@ -117,7 +115,7 @@ const handleSubmit = () => {
       }, 2800);
     })
     .finally(() => {
-      loading.value = false;
+      store.commit("setLoading", false);
     });
 };
 </script>
@@ -125,7 +123,7 @@ const handleSubmit = () => {
 <style scoped>
 .landing-page {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;

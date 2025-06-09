@@ -30,7 +30,7 @@
           <input type="number" id="price" v-model="price" required class="inputLogin half-input" :placeholder="$t('Price')" />
           <select id="condition" v-model="condition" required class="inputLogin half-input">
             <option value="" disabled>{{ $t("Condition") }}</option>
-            <option v-for="cond in conditionArray" :key="cond.id" :value="cond.id">{{ cond.name }}</option>
+            <option v-for="cond in conditionArray" :key="cond.id" :value="cond.id">{{ $t(cond.name) }}</option>
           </select>
         </div>
 
@@ -38,11 +38,11 @@
           <input type="number" id="weight" v-model="weight" class="inputLogin third-input" :placeholder="$t('Weight')" />
           <select id="color" v-model="color" required class="inputLogin third-input">
             <option value="" disabled>{{ $t("Color") }}</option>
-            <option v-for="colorOption in colorArray" :key="colorOption.id" :value="colorOption.id">{{ colorOption.name }}</option>
+            <option v-for="colorOption in colorArray" :key="colorOption.id" :value="colorOption.id">{{ $t(colorOption.name) }}</option>
           </select>
           <select id="material" v-model="material" required class="inputLogin third-input">
             <option value="" disabled >{{ $t("Material") }}</option>
-            <option v-for="materialOption in materialArray" :key="materialOption.id" :value="materialOption.id">{{ materialOption.name }}</option>
+            <option v-for="materialOption in materialArray" :key="materialOption.id" :value="materialOption.id">{{ $t(materialOption.name) }}</option>
           </select>
         </div>
 
@@ -50,7 +50,7 @@
 
           <select id="category" v-model="selectedCategory" required class="inputLogin">
             <option value="" disabled >{{ $t("Categories") }}</option>
-            <option v-for="cat in categoryArray" :key="cat.id" :value="cat.id">{{ cat.name }}</option>
+            <option v-for="cat in categoryArray" :key="cat.id" :value="cat.id">{{ $t(cat.name) }}</option>
           </select>
 
           </div>

@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <div class="user-info">
-                    <p class="offer">{{text}}</p>
+                    <p class="offer">{{ $t(text) }}</p>
                 </div>
             </div>
         </div>

@@ -38,15 +38,15 @@
             </svg>
           </div> -->
            <i data-feather="image" class="iconStyle" >
-              <input
-                  type="file"
-                  ref="fileInput"
-                  style="display: none"
-                  required
-                  @change="handleFileUpload"
-                  accept="image/*"
-                  multiple
-              >
+            <input
+              type="file"
+              ref="fileInput"
+              style="display: none"
+              required
+              @change="handleFileUpload"
+              accept="image/*"
+              multiple
+            >
           </i>
         </div>
 
@@ -157,7 +157,6 @@
       </form>
     </div>
 
-    <overlay v-if="loading"></overlay>
     <successErrorCard
       :type="type"
       :text="text"
@@ -182,7 +181,6 @@ const router = useRouter();
 const type = ref("success");
 const text = ref("");
 const showSuccessErrorCard = ref(false);
-const loading = ref(false);
 const agreedToTerms = ref(false);
 
 const name = ref('');
@@ -278,7 +276,7 @@ const handleSubmit = () => {
     return;
   }
 
-  loading.value = true;
+  store.commit("setLoading", true);
 
   swapResource
     .register({
@@ -306,14 +304,14 @@ const handleSubmit = () => {
       setTimeout(() => { showSuccessErrorCard.value = false; }, 2800);
     })
     .finally(() => {
-      loading.value = false;
+      store.commit("setLoading", false);
     });
 };
 </script>
 
 <style scoped>
 .register-page {
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -52,7 +52,7 @@
     .content-container {
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
       overflow: hidden;
       background-color: white;
     }

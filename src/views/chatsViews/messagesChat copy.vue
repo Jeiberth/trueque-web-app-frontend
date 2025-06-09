@@ -301,7 +301,8 @@
 
 .message-container {
   margin-top: 10px;
-  height: calc(100vh - 250px);
+  height: calc(calc(var(--vh, 1vh) * 100) - 250px)
+;
   position: relative;
   /* overflow: hidden; */
 

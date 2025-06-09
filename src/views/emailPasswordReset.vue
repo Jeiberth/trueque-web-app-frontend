@@ -22,7 +22,6 @@
         </button>
       </form>
     </div>
-    <overlay v-if="loading"></overlay>
     <successErrorCard
       :type="type"
       :text="text"
@@ -45,14 +44,13 @@ const store = useStore(); // Access Vuex store
 const swapResource = new swapApiResource();
 const router = useRouter();
 
-const loading = ref(false);
 const type = ref("error");
 const text = ref("The Email doesn't exist");
 const showSuccessErrorCard = ref(false);
 const code = ref('');
 
 const handleSubmit = () => {
-  loading.value = true;
+  store.commit("setLoading", true);
   swapResource
     .resetPasswordSendVerCode(code.value) // Adjust API parameters as needed
     .then((response) => {
@@ -73,14 +71,14 @@ const handleSubmit = () => {
       }
     })
     .catch((error) => {
-      text.value = error.message;
+      text.value = t(error.message);
       showSuccessErrorCard.value = true;
       setTimeout(() => {
         showSuccessErrorCard.value = false;
       }, 2800);
     })
     .finally(() => {
-      loading.value = false; // Reset loading state
+      store.commit("setLoading", false);
     });
 };
 </script>
@@ -88,7 +86,7 @@ const handleSubmit = () => {
 <style scoped>
 .landing-page {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;

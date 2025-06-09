@@ -1,6 +1,5 @@
 <template>
     <div class="message-container">
-        <overlay v-if="loading"></overlay>
         <div class="messages">
             <template v-for="(group, index) in groupedMessages" :key="index">
                 <div class="date-separator">
@@ -62,7 +61,6 @@
     const messageToBeSend = ref("");
     const store = useStore();
     const userIdAuth = store.getters.getUserId;
-    const loading = ref(false);
     const route = useRoute();
     const chatId = route.query.chatId;
     const isMounted = ref(false);
@@ -172,7 +170,8 @@
 <style scoped>
 .message-container {
   margin-top: 10px;
-  height: calc(100vh - 250px);
+  height: calc(calc(var(--vh, 1vh) * 100) - 250px)
+;
   position: relative;
 }
 

@@ -19,7 +19,8 @@
             <h3 class="title-card">{{ card.name }}</h3>
             <div class="badges">
               <span class="badge badge-price">~${{ card.price }}</span>
-              <span class="badge badge-condition">{{ card.condition.name }}</span>
+              <!-- <span class="badge badge-condition">{{ card.condition.name }}</span> -->
+              <span class="badge badge-condition">{{ $t(card.condition.name) }}</span>
             </div>
             <p class="description-card">{{ card.description }}</p>
           </div>
@@ -452,7 +453,7 @@ watch(() => props.things, async (newThings) => {
   position: relative;
   width: 90vw;
   max-width: 400px;
-  height: calc(92vh - 110px);
+  height: calc(calc(var(--vh, 1vh) * 92) - 110px);
 }
 
 .tinder--card {

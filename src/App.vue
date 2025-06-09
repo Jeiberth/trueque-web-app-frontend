@@ -2,6 +2,7 @@
     <!-- Display the overlay if loading is true -->
     <overlay v-if="loading"></overlay>
     <router-view></router-view>
+
 </template>
 
 <script setup>
@@ -19,7 +20,17 @@
     const loading = computed(() => store.getters.getLoading);
 
     onMounted(() => {
-      store.dispatch('fetchData');
+
+        const setViewportHeight = () => {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        window.addEventListener('resize', setViewportHeight);
+        setViewportHeight();
+
+        store.dispatch('fetchData');
+
     });
 
 

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <overlay v-if="loading"></overlay>
         <successErrorCard :type="type" :text="text" :launch="showSuccesError"></successErrorCard>
         <div class="card" v-if="!AcceptedYet">
             <div class="rap">
@@ -98,7 +97,6 @@
 
     const store = useStore();
 
-    const loading = ref(false);
 
 
     // Using useRoute to access route params

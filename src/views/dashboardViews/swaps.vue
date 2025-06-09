@@ -1,6 +1,5 @@
 <template>
     <div style="overflow: hidden !important;">
-        <overlay v-if="loadingSearching"></overlay>
         <successErrorCard :type="typeSuccessErrorCard" :text="textSuccessErrorCard" :launch="showSuccessErrorCard"></successErrorCard>
         <searchElement @searchThingsEmit="searchThings" @showFiltersEmit="showFiltersEmit()"></searchElement>
         <h2 class="noSwaps" v-if="showThingsAfterSearch && isThingsEmpty">{{ $t("Looks like you've seen everything! Try searching for something new or expanding your range to discover more.") }}</h2>
@@ -255,10 +254,8 @@
         showThingsAfterSearch.value = false;
     }
 
-    const loadingSearching = ref(false);
-
     const searchThings = (obj) => {
-        loadingSearching.value = true;
+        store.commit("setLoading", true);
         showThingsAfterSearch.value = false;
         swapResource
             .getFilteredThings({ range: obj.range, category_id: obj.category, condition_id: obj.condition , material_id: obj.material , color_id: obj.color , weight: [ 0 , obj.weight ], price: [ 0 , obj.price ], search: obj.searchTerm })
@@ -266,7 +263,7 @@
                 thingsForSwipe.value = response;
                 store.commit("setCachedSwipes", thingsForSwipe.value);
                 showThingsAfterSearch.value = true;
-                loadingSearching.value = false;
+                store.commit("setLoading", false);
                 if(response == null){ onAllSwiped(); };
             });
     };

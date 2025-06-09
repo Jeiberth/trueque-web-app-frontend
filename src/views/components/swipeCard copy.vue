@@ -315,7 +315,7 @@ watch(() => props.things, (newThings) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 100vh; */
+  /* min-height: calc(var(--vh, 1vh) * 100); */
   height: auto;
   padding-top: 0px;
 }
@@ -324,7 +324,7 @@ watch(() => props.things, (newThings) => {
   position: relative;
   width: 90vw;
   max-width: 400px;
-  height: calc(92vh - 110px);
+  height: calc(calc(var(--vh, 1vh) * 92) - 110px);
   /* max-height: 600px; */
 }
 

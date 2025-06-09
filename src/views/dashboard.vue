@@ -79,7 +79,7 @@
 /* Desktop wrapper - only visible on larger screens */
 .desktop-wrapper {
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     /* background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); */
     background: #0a0d11;
     display: flex;
@@ -103,7 +103,7 @@
     @keyframes shrinkContainer {
         0% {
             width: 100vw;
-            height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
             max-width: 100vw;
             border-radius: 0;
             box-shadow: none;
@@ -111,21 +111,21 @@
         }
         20% {
             width: 95vw;
-            height: 95vh;
+            height: calc(var(--vh, 1vh) * 95);
             max-width: 95vw;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
         }
         60% {
             width: 520px;
-            height: 99vh;
+            height: calc(var(--vh, 1vh) * 99);
             max-width: 520px;
             border-radius: 20px;
             box-shadow: 0 15px 45px rgba(255, 255, 255, 0.35);
         }
         100% {
             width: 100%;
-            height: 98vh;
+            height: calc(var(--vh, 1vh) * 98);
             max-width: 500px;
             border-radius: 24px;
             box-shadow: 0 20px 60px rgba(255, 255, 255, 0.418);
@@ -250,7 +250,7 @@
     overflow: hidden;
     background: var(--gradient-reverse);
     align-items: center;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     max-width: 500px;
     margin: auto;
@@ -265,7 +265,7 @@
     .content-container {
         /* Initial state for animation - start at full screen */
         width: 100vw;
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         max-width: 100vw;
         border-radius: 0;
         box-shadow: none;
@@ -277,7 +277,7 @@
     /* Final state - only applied after animation completes */
     .content-container:not(.animate-shrink) {
         width: 100%;
-        height: 98vh;
+        height: calc(var(--vh, 1vh) * 98);
         max-width: 500px;
         border-radius: 24px;
         box-shadow: 0 20px 60px rgba(255, 255, 255, 0.418);
@@ -289,8 +289,10 @@
     }
 
     .scrollable-content {
-        height: calc(98vh - 95px) !important;
+        height: calc(calc(var(--vh, 1vh) * 98) - 95px) !important;
     }
+
+
 /*
     .desktop-wrapper {
         padding: 20px;
@@ -436,7 +438,7 @@
         box-shadow: none;
         border: none;
         border-radius: 0;
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
     }
 }
 </style>

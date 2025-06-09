@@ -22,7 +22,6 @@
         </button>
       </form>
     </div>
-    <overlay v-if="loading"></overlay>
     <successErrorCard
       :type="type"
       :text="text"
@@ -47,14 +46,13 @@ const swapResource = new swapApiResource();
 const router = useRouter();
 const route = useRoute();
 
-const loading = ref(false);
 const type = ref("error");
 const text = ref("The Verification Code is incorrect");
 const showSuccessErrorCard = ref(false);
 const code = ref('');
 
 const handleSubmit = () => {
-  loading.value = true;
+  store.commit("setLoading", true);
   swapResource
     .checkAndVerifyBio(code.value)
     .then((response) => {
@@ -84,7 +82,7 @@ const handleSubmit = () => {
       }, 2800);
     })
     .finally(() => {
-      loading.value = false;
+      store.commit("setLoading", false);
     });
 };
 </script>
@@ -92,7 +90,7 @@ const handleSubmit = () => {
 <style scoped>
 .landing-page {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;
