@@ -13,7 +13,7 @@
                 <!-- <makeOfferView :myThings="" :hisThings="" @sendOfferEmit="sendOffer"></makeOfferView> -->
 
                 <!-- Offer views for a single chat -->
-                <cardForClick text="Make an Offer" icon="plus-circle" @clicked="makeAnOffer"></cardForClick>
+                <cardForClick :text="$t(`Make an Offer`)" icon="plus-circle" @clicked="makeAnOffer"></cardForClick>
                 <offerCard @openOffer="openOffer(offer.id)" v-for="(offer, index) in offers" :offerStatus="offer.status_id" :offerSend="offer.offerSend" :created_at="offer.created_at" :offerId="offer.id"></offerCard>
 
                 <!-- main Page -->

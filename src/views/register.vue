@@ -173,6 +173,7 @@ import overlay from "./components/overlay.vue";
 import successErrorCard from './components/successErrorCard.vue';
 import axios from 'axios';
 import { useI18n } from 'vue-i18n';
+import { useStore } from 'vuex';
 
 const { t, locale } = useI18n();
 const swapResource = new swapApiResource();
@@ -182,6 +183,7 @@ const type = ref("success");
 const text = ref("");
 const showSuccessErrorCard = ref(false);
 const agreedToTerms = ref(false);
+const store = useStore();
 
 const name = ref('');
 const address = ref('');
@@ -262,14 +264,51 @@ const selectAddress = (suggestion) => {
   suggestions.value = [];
 };
 
+const isPasswordValid = () => {
+  const minLength = /.{9,}/;
+  const hasNumber = /\d/;
+  const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/;
+
+  return (
+    minLength.test(password.value) &&
+    hasNumber.test(password.value) &&
+    hasSymbol.test(password.value)
+  );
+};
+
+
 const handleSubmit = () => {
   if (!agreedToTerms.value) {
+    return;
+  }
+
+  if (!isPasswordValid()) {
+    text.value = t("Password must be at least 9 characters long and contain at least one symbol and one number.");
+    type.value = "error";
+    showSuccessErrorCard.value = true;
+    setTimeout(() => { showSuccessErrorCard.value = false; }, 2800);
     return;
   }
 
   if (!profileImg.value || profileImg.value.length === 0) {
     showImageError.value = true;
     text.value = t("Please upload a profile image");
+    type.value = "error";
+    showSuccessErrorCard.value = true;
+    setTimeout(() => { showSuccessErrorCard.value = false; }, 2800);
+    return;
+  }
+
+  if (!lat.value || !lon.value) {
+    text.value = t("Please select a valid address from the dropdown.");
+    type.value = "error";
+    showSuccessErrorCard.value = true;
+    setTimeout(() => { showSuccessErrorCard.value = false; }, 2800);
+    return;
+  }
+
+  if (!language.value) {
+    text.value = t("Please select a language.");
     type.value = "error";
     showSuccessErrorCard.value = true;
     setTimeout(() => { showSuccessErrorCard.value = false; }, 2800);

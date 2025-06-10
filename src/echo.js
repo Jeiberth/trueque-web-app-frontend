@@ -16,7 +16,7 @@ export function initEcho(token) {
         cluster: 'us2',
         forceTLS: true,
         encrypted: true,
-        authEndpoint: 'https://1b00-70-50-249-144.ngrok-free.app/broadcasting/auth',
+        authEndpoint: 'https://794e-70-50-249-144.ngrok-free.app/broadcasting/auth',
         auth: {
             headers: {
                 Authorization: `Bearer ${token}`,

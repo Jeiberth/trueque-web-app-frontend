@@ -138,14 +138,37 @@ onMounted(() => {
     color: #ffffff; /* Color for owner icon */
 }
 
-/* Center username below the profile image */
+/* Center username below the profile image
 .username {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 5px;
     font-size: 1.5em;
     font-weight: bold;
     color: white;
+} */
+
+.username {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+
+    /* Prevent wrapping */
+    white-space: nowrap;
+
+    /* Hide overflow */
+    overflow: hidden;
+
+    /* Add ellipsis for overflowed text */
+    text-overflow: ellipsis;
+
+    /* Set a max width or a relative width */
+    max-width: 200px; /* or use 100% if inside a container */
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 /* Center image and make it circular */
 .card-image {
