@@ -1,7 +1,7 @@
 <template>
   <div class="landing-page">
     <div class="container">
-      <div class="cont_logo"></div>
+      <div class="cont_logo" @click="openLogoLink"></div>
       <h1 class="title">{{ $t("Welcome to Trueque") }}</h1>
       <div class="button-group">
         <button @click="signIn" class="submit-button sign-in">{{ $t("Sign In") }}</button>
@@ -24,6 +24,11 @@ const signUp = () => {
 const signIn = () => {
   router.push({ name: 'login' });
 };
+
+const openLogoLink = () => {
+  window.open('https://www.trueque.art/#/how-it-works', '_blank');
+}
+
 </script>
 
 <style scoped>
@@ -66,6 +71,7 @@ const signIn = () => {
   transform: translateX(-50%);
   width: 100px;
   height: 100px;
+  cursor: pointer;
   border-radius: 50%;
   background: url("../assets/logotruequeRounded.webp") no-repeat center center;
   background-size: cover;

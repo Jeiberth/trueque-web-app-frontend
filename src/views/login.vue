@@ -1,7 +1,7 @@
 <template>
 <div class="landing-page">
   <div class="container">
-    <div class="cont_logo"></div>
+    <div class="cont_logo"  @click="openLogoLink"></div>
     <h1 class="title">{{ $t("Log In") }}</h1>
     <form @submit.prevent="handleSubmit" class="form">
       <div class="input-group">
@@ -148,6 +148,11 @@ const handleSubmit = () => {
 
     });
 };
+
+
+const openLogoLink = () => {
+  window.open('https://www.trueque.art/#/how-it-works', '_blank');
+}
 </script>
 
 <style scoped>
@@ -184,6 +189,7 @@ const handleSubmit = () => {
   background: url("../assets/logotruequeRounded.webp") no-repeat center center;
   background-size: cover;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 .title {

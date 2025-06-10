@@ -1,6 +1,6 @@
 <template>
     <!-- Desktop background wrapper -->
-    <div class="desktop-wrapper">
+    <div class="desktop-wrapper" @click="handleBackgroundClick">
         <!-- Animated background elements for desktop -->
         <div class="bg-orb orb-1"></div>
         <div class="bg-orb orb-2"></div>
@@ -12,7 +12,7 @@
         <div class="bg-orb orb-8"></div>
 
         <!-- Main mobile container -->
-        <div class="content-container" :class="{ 'animate-shrink': shouldAnimateBorder && isDesktop }">
+        <div class="content-container" :class="{ 'animate-shrink': shouldAnimateBorder && isDesktop }" @click.stop>
             <!-- Scrollable content area -->
             <div class="scrollable-content">
                 <router-view v-slot="{ Component }">
@@ -57,6 +57,12 @@
 
     const checkScreenSize = () => {
         isDesktop.value = window.innerWidth > 500;
+    };
+
+    const handleBackgroundClick = (event) => {
+        if (isDesktop.value) {
+            window.open('https://www.trueque.art/#/how-it-works', '_blank');
+        }
     };
 
     onMounted(() => {
