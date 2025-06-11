@@ -108,17 +108,17 @@
         fileInput.value.click();
     };
 
-    const handleFileUpload = (event) => {
-        const files = Array.from(event.target.files);
-        if (files.length > 0) {
-            images.value = files;
-            isFileUploaded.value = true;
-            showImageError.value = false;
-        } else {
-            images.value = null;
-            isFileUploaded.value = false;
-        }
-    };
+    // const handleFileUpload = (event) => {
+    //     const files = Array.from(event.target.files);
+    //     if (files.length > 0) {
+    //         images.value = files;
+    //         isFileUploaded.value = true;
+    //         showImageError.value = false;
+    //     } else {
+    //         images.value = null;
+    //         isFileUploaded.value = false;
+    //     }
+    // };
 
     const handleFileUpload = (event) => {
         const files = Array.from(event.target.files);
