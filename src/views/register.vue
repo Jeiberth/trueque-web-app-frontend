@@ -247,7 +247,7 @@ const handleFileUpload = (event) => {
 
 const onInputChange = () => {
   clearTimeout(typingTimeout);
-  typingTimeout = setTimeout(fetchAddressSuggestions, 500);
+  typingTimeout = setTimeout(fetchAddressSuggestions, 1000);
 };
 
 const goToLogin = () => {
