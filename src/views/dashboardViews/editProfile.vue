@@ -227,9 +227,37 @@ const triggerFileInput = () => {
   fileInput.value.click();
 };
 
+// const handleFileUpload = (event) => {
+//   const files = Array.from(event.target.files);
+//   if (files.length > 0) {
+//     profileImg.value = files;
+//     isFileUploaded.value = true;
+//     showImageError.value = false;
+//   } else {
+//     profileImg.value = null;
+//     isFileUploaded.value = false;
+//   }
+// };
+
 const handleFileUpload = (event) => {
   const files = Array.from(event.target.files);
+
   if (files.length > 0) {
+    const isImage = files.every(file => file.type.startsWith('image/'));
+
+    if (!isImage) {
+      text.value = t("Only image files are allowed.");
+      type.value = "error";
+      showSuccessErrorCard.value = true;
+      setTimeout(() => { showSuccessErrorCard.value = false; }, 2800);
+      
+      // Reset any previous file state
+      profileImg.value = null;
+      isFileUploaded.value = false;
+      showImageError.value = true;
+      return;
+    }
+
     profileImg.value = files;
     isFileUploaded.value = true;
     showImageError.value = false;
@@ -238,6 +266,7 @@ const handleFileUpload = (event) => {
     isFileUploaded.value = false;
   }
 };
+
 
 const goToReset = () => {
   router.push({ name: 'resetPassword' });

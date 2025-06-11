@@ -120,6 +120,38 @@
         }
     };
 
+    const handleFileUpload = (event) => {
+        const files = Array.from(event.target.files);
+
+        if (files.length > 0) {
+            const isImage = files.every(file => file.type.startsWith('image/'));
+
+            if (!isImage) {
+
+                textSuccessErrorCard.value = t("Only image files are allowed.");
+                typeSuccessErrorCard.value = "error";
+                showSuccessErrorCard.value = true;
+                setTimeout(() => {
+                    showSuccessErrorCard.value = false;
+                }, 2800);
+                    
+                // Reset any previous file state
+                images.value = null;
+                isFileUploaded.value = false;
+                showImageError.value = true;
+                return;
+            }
+
+            images.value = files;
+            isFileUploaded.value = true;
+            showImageError.value = false;
+        } else {
+            images.value = null;
+            isFileUploaded.value = false;
+        }
+    };
+
+
     onBeforeUnmount(() => {
         store.commit("setLoading", true);
     })

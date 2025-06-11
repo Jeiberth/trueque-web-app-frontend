@@ -199,10 +199,37 @@ const triggerFileInput = () => {
   fileInput.value.click();
 };
 
+// const handleFileUpload = (event) => {
+//   const files = Array.from(event.target.files);
+//   images.value = files;
+// };
+
 const handleFileUpload = (event) => {
   const files = Array.from(event.target.files);
-  images.value = files;
+
+  if (files.length > 0) {
+    const isImage = files.every(file => file.type.startsWith('image/'));
+
+    if (!isImage) {
+
+      typeSuccessErrorCard.value = "error";
+      textSuccessErrorCard.value = t("Only image files are allowed.");
+      showSuccessErrorCard.value = true;
+      setTimeout(() => {
+        showSuccessErrorCard.value = false;
+      }, 2800);
+
+      // Reset any previous file state
+      images.value = null;
+      return;
+    }
+
+    images.value = files;
+  } else {
+    images.value = null;
+  }
 };
+
 
 
 const deleteItem = async () => {
