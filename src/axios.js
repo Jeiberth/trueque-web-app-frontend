@@ -5,8 +5,7 @@ import store from '/src/store'  // Make sure to import the Vuex store
 import router from '/src/router';  // Vue Router
 
 const axiosInstance = axios.create({
-  // baseURL: 'https://trueque-backend-production.up.railway.app/api/',  // Example base URL
-  baseURL: 'http://localhost:8000/api/',  // Example base URL
+  baseURL: 'https://trueque-backend-production.up.railway.app/api/',  // Example base URL
   headers: {
     'Content-Type': 'application/json',
   }
