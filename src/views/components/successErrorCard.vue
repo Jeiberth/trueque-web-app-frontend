@@ -8,6 +8,9 @@
 import { onMounted, defineProps, watch, ref } from "vue";
 import Swal from "sweetalert2";
 import feather from "feather-icons";
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
 
 const props = defineProps({
   type: {
@@ -24,11 +27,33 @@ const props = defineProps({
   },
 });
 
+// // Optional: Watch for external changes to cash value
+// watch(() => props.launch, (newValue) => {
+//     if(newValue){
+//         Swal.fire({
+//             title: props.type.charAt(0).toUpperCase() + props.type.slice(1),
+//             text: props.text,
+//             icon: props.type,
+//             timer: 2800,
+//             timerProgressBar: true,
+//             showConfirmButton: false, // Remove the OK button
+//             backdrop: true,
+//             customClass: {
+//             popup: "custom-modal", // Custom modal class
+//             icon: "custom-icon-wrapper", // Custom icon wrapper class
+//             },
+//             willOpen: () => {
+//             feather.replace(); // Replace <i> tags with Feather icons
+//             },
+//         });
+//     }
+// });
+
 // Optional: Watch for external changes to cash value
 watch(() => props.launch, (newValue) => {
     if(newValue){
         Swal.fire({
-            title: props.type.charAt(0).toUpperCase() + props.type.slice(1),
+            title: t(props.type.charAt(0).toUpperCase() + props.type.slice(1)),
             text: props.text,
             icon: props.type,
             timer: 2800,
@@ -45,6 +70,7 @@ watch(() => props.launch, (newValue) => {
         });
     }
 });
+
 
 onMounted(() => {
   feather.replace();

@@ -1,6 +1,10 @@
 {
   "Only image files are allowed.": "Solo se permiten imágenes.",
   "Accepted": "Aceptado",
+  "Success": "Éxito",
+  "success": "Éxito",
+  "Error": "Error",
+  "error": "Error",
   "Pending": "Pendiente",
   "The offer was denied": "La oferta fue rechazada",
   "The offer was accepted": "La oferta fue aceptada",

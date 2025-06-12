@@ -1,6 +1,10 @@
 {
   "Only image files are allowed.": "Only image files are allowed.",
   "Accepted": "Accepted",
+  "Success": "Success",
+  "success": "Success",
+  "Error": "Error",
+  "error": "Error",
   "Rejected": "Rejected",
   "Pending": "Pending",
   "The offer was denied": "The offer was denied",

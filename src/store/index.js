@@ -59,6 +59,9 @@ const store = createStore({
     setUserDetails(state, userDetails) {
       state.userDetails = userDetails;
     },
+    setUserProfileImg(state, profileImg) {
+        state.userDetails.user.profile_picture = profileImg;
+    },
     addNewThing(state, newThing) {
         if (state.userDetails) {
             state.userDetails.things.unshift(newThing);

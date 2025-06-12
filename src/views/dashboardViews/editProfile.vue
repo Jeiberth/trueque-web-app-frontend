@@ -290,6 +290,7 @@ const handleSubmit = async () => {
     .then((response) => {
       if (response.success) {
         store.commit("setLoading", false);
+        store.commit("setUserProfileImg", response.data);   
         type.value = 'success';
         text.value = t('User Successfully Updated');
         showSuccessErrorCard.value = true;

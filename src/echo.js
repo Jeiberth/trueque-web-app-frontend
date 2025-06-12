@@ -16,7 +16,8 @@ export function initEcho(token) {
         cluster: 'us2',
         forceTLS: true,
         encrypted: true,
-        authEndpoint: 'https://trueque-backend-production.up.railway.app/broadcasting/auth',
+        // authEndpoint: 'https://trueque-backend-production.up.railway.app/broadcasting/auth',
+        authEndpoint: 'http://localhost:8000/broadcasting/auth',
         auth: {
             headers: {
                 Authorization: `Bearer ${token}`,
