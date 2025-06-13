@@ -130,6 +130,8 @@
     const editUser = async () => {
         store.commit("setLoading", true);
         await swapResource.logout();
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('user_id');
         // await swapResource.unregisterFcmToken({ token: store.getters.getFcmToken })
         store.dispatch('logout');
         router.push({ name: 'login' });

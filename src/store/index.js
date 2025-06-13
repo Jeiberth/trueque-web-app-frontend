@@ -542,10 +542,28 @@ const store = createStore({
     getUserOffers: (state) => (userId) => {
         return state.userOffers[userId] || { offers: [], makeOffer: false };
     },
+    // totalUnreadAndOffersCount: (state) => {
+    //     return state.matches.reduce((sum, match) => {
+    //         return sum + (match.unread_messages_count || 0) + (match.offers_count || 0);
+    //     }, 0);
+    // },
     totalUnreadAndOffersCount: (state) => {
-        return state.matches.reduce((sum, match) => {
-            return sum + (match.unread_messages_count || 0) + (match.offers_count || 0);
-        }, 0);
+        try {
+            // Add null/undefined check for state.matches
+            if (!state.matches || !Array.isArray(state.matches)) {
+                return 0;
+            }
+
+            return state.matches.reduce((sum, match) => {
+                // Additional safety checks for match object
+                if (!match || typeof match !== 'object') {
+                    return sum;
+                }
+                return sum + (match.unread_messages_count || 0) + (match.offers_count || 0);
+            }, 0);
+        } catch (error) {
+            return 0;
+        }
     }
   }
 });

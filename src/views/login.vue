@@ -113,6 +113,7 @@ const handleSubmit = () => {
       if ('token' in response) {
         store.dispatch('setAuthData', { token: response.token , userId: response.user_id });
         localStorage.setItem('access_token', response.token);
+        localStorage.setItem('user_id', response.user_id);
         store.dispatch('initEcho');
         locale.value = response.language;
 

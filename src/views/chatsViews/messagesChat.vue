@@ -11,8 +11,8 @@
                     :class="[
                     'message',
                     {
-                        sent: message.user_id === userIdAuth,
-                        received: message.user_id !== userIdAuth,
+                        sent: message.user_id == userIdAuth,
+                        received: message.user_id != userIdAuth,
                     },
                     ]"
                 >
@@ -60,7 +60,7 @@
     const { t } = useI18n();
     const messageToBeSend = ref("");
     const store = useStore();
-    const userIdAuth = store.getters.getUserId;
+    const userIdAuth = localStorage.getItem('user_id');
     const route = useRoute();
     const chatId = route.query.chatId;
     const isMounted = ref(false);

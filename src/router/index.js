@@ -47,6 +47,8 @@ const routes = [
     component: () => import('../views/dashboard.vue'),
     meta: { requireAuth: true, isGuest: false },
     children: [
+
+      { path: '', redirect: { name: 'swaps' } },
       //profile tab
       { path: 'profile',  name: 'profile', component: () => import('../views/dashboardViews/profile.vue') },
       { path: 'newthing', name: 'newthing', component: () => import('../views/dashboardViews/newThing.vue') },
@@ -64,6 +66,9 @@ const routes = [
         name: 'chat',
         component: () => import('../views/chatsViews/chatHeader.vue'),
         children: [
+
+          { path: '', redirect: { name: 'chats' } },
+
           { path: 'messages', name: 'messages', component: () => import('../views/chatsViews/messagesChat.vue') },
           { path: 'offers', name: 'offers', component: () => import('../views/chatsViews/offers.vue') },
           {
@@ -88,14 +93,14 @@ const router = createRouter({
 import store from '../store';
 // Navigation Guard
 router.beforeEach((to, from, next) => {
-    if (to.meta.requireAuth && !store.getters.isAuthenticated) {
-      next({ name: "loginRegister" }); // Redirect to login if not authenticated
-    }
-    else if (to.meta.isGuest && store.getters.isAuthenticated) {
-      next({ name: "dashboard" }); // Redirect to dashboard if already logged in
-    } else {
-      next(); // Allow navigation
-    }
+  if (to.meta.requireAuth && !store.getters.getToken) {
+    next({ name: "loginRegister" }); // Redirect to login if not authenticated
+  }
+  else if (to.meta.isGuest && store.getters.getToken) {
+    next({ name: "dashboard" }); // Redirect to dashboard if already logged in
+  } else {
+    next(); // Allow navigation
+  }
 });
 
 export default router;

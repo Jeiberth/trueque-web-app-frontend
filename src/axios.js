@@ -5,6 +5,7 @@ import store from '/src/store'  // Make sure to import the Vuex store
 import router from '/src/router';  // Vue Router
 
 const axiosInstance = axios.create({
+  // baseURL: 'https://trueque-backend-production.up.railway.app/api/',  // Example base URL
   baseURL: 'https://trueque-backend-production.up.railway.app/api/',  // Example base URL
   headers: {
     'Content-Type': 'application/json',
@@ -29,6 +30,7 @@ axiosInstance.interceptors.response.use((response) => {
   }, (error) => {
     if (error.response && error.response.status === 401) {
       localStorage.removeItem('access_token');  // Remove token from localStorage
+      localStorage.removeItem('user_id');  // Remove token from localStorage
 
       router.push('/login');  // Adjust to your login route path
       return Promise.reject(error);  // Optionally handle rejection for other parts of the app
@@ -78,11 +80,6 @@ display add
 script
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2219376995096244"
      crossorigin="anonymous"></script>
-
-
-
-
-
 
 
 */

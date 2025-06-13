@@ -39,7 +39,7 @@
             :disabled="isSearching"
             required
             class="inputLogin"
-            :placeholder="$t('Enter your address')"
+            :placeholder="$t('Enter your approximate address')"
           />
           <div v-if="suggestions.length" class="dropdown">
             <div

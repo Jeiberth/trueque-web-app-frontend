@@ -26,6 +26,13 @@
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         };
 
+        const token = localStorage.getItem('access_token');
+        const userId = localStorage.getItem('user_id');
+        if (token && userId) {
+            store.commit("setToken", token);
+            store.commit("setUserId", userId);
+        }
+
         window.addEventListener('resize', setViewportHeight);
         setViewportHeight();
 
